@@ -1,0 +1,10 @@
+<h1>{{title}}</h1>
+<div class="card-header">
+    <a routerLink = '/'>Products</a>
+    <a routerLink = '/add'>Add Product</a>
+   
+    <a *ngIf="!_authService.loggedIn()" routerLink="/login" routerLinkActive="active">Login</a>
+    
+    <a *ngIf="!_authService.loggedIn()" routerLink="/register" routerLinkActive="active">Register</a>
+    <a style="cursor: pointer" *ngIf="_authService.loggedIn()" (click)="_authService.logoutUser()">Logout</a>
+</div>
